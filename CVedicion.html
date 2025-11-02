@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Kublay Javier Tayro Mosqueira</title>
+    <style>
+        /* Design System */
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900-rgb: 19, 52, 59;
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --font-family-base: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            --font-size-xs: 11px;
+            --font-size-sm: 12px;
+            --font-size-base: 14px;
+            --font-size-md: 14px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-2xl: 20px;
+            --font-size-3xl: 24px;
+            --font-size-4xl: 30px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 550;
+            --font-weight-bold: 600;
+            --line-height-tight: 1.2;
+            --line-height-normal: 1.5;
+            --space-4: 4px;
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-gray-400-rgb: 119, 124, 124;
+                --color-teal-300-rgb: 50, 184, 198;
+                --color-gray-300-rgb: 167, 169, 169;
+                --color-gray-200-rgb: 245, 245, 245;
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+                --color-primary: var(--color-teal-300);
+                --color-primary-hover: var(--color-teal-400);
+                --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+            }
+            
+            .job-title,
+            .program-name {
+                color: rgba(var(--color-gray-200-rgb), 0.85);
+            }
+            
+            .period {
+                color: var(--color-gray-200);
+            }
+            
+            .responsibilities li {
+                color: var(--color-gray-200);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: var(--font-size-base);
+            font-family: var(--font-family-base);
+            line-height: var(--line-height-normal);
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            padding: var(--space-20);
+        }
+
+        /* CV Container */
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--color-surface);
+            box-shadow: var(--shadow-md);
+            border-radius: var(--radius-base);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Download Section - HIGHLY VISIBLE AT TOP */
+        .download-section {
+            max-width: 1000px;
+            margin: 0 auto 30px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #3498db;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .download-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: #2980b9;
+        }
+
+        .download-button:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+        }
+
+
+
+        /* SVG Icons */
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--color-teal-300);
+        }
+
+        /* CV Layout */
+        .cv-content {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, var(--color-slate-900) 0%, var(--color-teal-700) 100%);
+            color: var(--color-white);
+            padding: var(--space-32);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(50, 184, 198, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .sidebar::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(50, 184, 198, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .sidebar h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-tight);
+            margin-bottom: var(--space-8);
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sidebar .title {
+            font-size: var(--font-size-lg);
+            color: var(--color-teal-300);
+            margin-bottom: var(--space-32);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .section {
+            margin-bottom: var(--space-32);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-16);
+            padding-bottom: var(--space-8);
+            border-bottom: 2px solid var(--color-teal-300);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-12);
+            margin-bottom: var(--space-16);
+            font-size: var(--font-size-base);
+        }
+
+        .contact-icon {
+            margin-top: 2px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item a {
+            color: var(--color-teal-300);
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .description {
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: var(--space-32);
+            background-color: var(--color-white);
+            position: relative;
+        }
+
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(33, 128, 141, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .main-section {
+            margin-bottom: var(--space-32);
+        }
+
+        .main-section-title {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-slate-900);
+            margin-bottom: var(--space-24);
+            padding-bottom: var(--space-8);
+            position: relative;
+        }
+
+        .main-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-teal-300) 100%);
+            border-radius: 2px;
+        }
+
+        .experience-item,
+        .education-item {
+            margin-bottom: var(--space-24);
+            padding-bottom: var(--space-24);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .experience-item:last-child,
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-12);
+            flex-wrap: wrap;
+            gap: var(--space-8);
+        }
+
+        .item-title {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .company-name,
+        .institution-name {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-slate-900);
+            margin-bottom: var(--space-4);
+            position: relative;
+            display: inline-block;
+        }
+
+        .company-name::after,
+        .institution-name::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-teal-300) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .experience-item:hover .company-name::after,
+        .education-item:hover .institution-name::after {
+            width: 100%;
+        }
+
+        .job-title,
+        .program-name {
+            font-size: var(--font-size-base);
+            color: #4a4a4a;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .period {
+            font-size: var(--font-size-sm);
+            color: #3a3a3a;
+            background-color: rgba(var(--color-teal-500-rgb), 0.08);
+            padding: var(--space-4) var(--space-12);
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            position: relative;
+            padding-left: var(--space-20);
+            margin-bottom: var(--space-8);
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal-300) 100%);
+            border-radius: 2px;
+            transform: rotate(45deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+
+            .cv-container {
+                border-radius: 0;
+            }
+
+            .cv-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: var(--space-24);
+            }
+
+            .main-content {
+                padding: var(--space-24);
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+
+            .period {
+                align-self: flex-start;
+            }
+        }
+
+        /* Print Styles - OPTIMIZED FOR ONE A4 PAGE */
+        @media print {
+            /* Hide download button in print */
+            .download-section,
+            .download-button {
+                display: none !important;
+            }
+            
+            /* A4 page with minimal margins */
+            @page {
+                size: A4 portrait;
+                margin: 8mm 10mm;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                line-height: 1.25 !important;
+            }
+
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+                font-size: 9pt;
+            }
+
+            .sidebar::before,
+            .sidebar::after,
+            .main-content::before {
+                display: none;
+            }
+
+            .cv-container {
+                max-width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                margin: 0;
+                padding: 0;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .cv-content {
+                display: grid;
+                grid-template-columns: 250px 1fr;
+                min-height: auto;
+                gap: 0;
+            }
+
+            /* SIDEBAR - COMPACT */
+            .sidebar {
+                background: linear-gradient(135deg, var(--color-slate-900) 0%, var(--color-teal-700) 100%);
+                color: white;
+                padding: 12pt 14pt;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .sidebar h1 {
+                font-size: 16pt;
+                margin-bottom: 4pt;
+                line-height: 1.1 !important;
+            }
+
+            .sidebar .title {
+                font-size: 10pt;
+                margin-bottom: 16pt;
+                line-height: 1.2 !important;
+            }
+
+            .section {
+                margin-bottom: 14pt;
+            }
+
+            .section-title {
+                font-size: 11pt;
+                margin-bottom: 8pt;
+                padding-bottom: 4pt;
+                line-height: 1.2 !important;
+            }
+
+            .contact-item {
+                font-size: 8.5pt;
+                margin-bottom: 7pt;
+                gap: 8pt;
+                line-height: 1.2 !important;
+            }
+
+            .contact-icon svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .description {
+                font-size: 8.5pt;
+                line-height: 1.3 !important;
+            }
+
+            /* MAIN CONTENT - COMPACT */
+            .main-content {
+                background-color: white;
+                padding: 12pt 14pt;
+            }
+
+            .main-section {
+                margin-bottom: 14pt;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .main-section:last-child {
+                margin-bottom: 0;
+            }
+
+            .main-section-title {
+                font-size: 12pt;
+                margin-bottom: 8pt;
+                padding-bottom: 4pt;
+                line-height: 1.1 !important;
+            }
+
+            .main-section-title::after {
+                width: 40px;
+                height: 2px;
+            }
+
+            .experience-item,
+            .education-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 8pt;
+                padding-bottom: 8pt;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .experience-item:last-child,
+            .education-item:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .item-header {
+                margin-bottom: 6pt;
+                gap: 6pt;
+            }
+
+            .company-name,
+            .institution-name {
+                font-size: 10pt;
+                margin-bottom: 2pt;
+                line-height: 1.2 !important;
+            }
+
+            .company-name::after,
+            .institution-name::after {
+                display: none;
+            }
+
+            .job-title,
+            .program-name {
+                font-size: 8.5pt;
+                line-height: 1.2 !important;
+            }
+
+            .period {
+                font-size: 7.5pt;
+                padding: 2pt 8pt;
+                line-height: 1.2 !important;
+            }
+
+            .responsibilities {
+                margin-top: 4pt;
+            }
+
+            .responsibilities li {
+                font-size: 8.5pt;
+                margin-bottom: 3pt;
+                padding-left: 14pt;
+                line-height: 1.25 !important;
+            }
+
+            .responsibilities li:last-child {
+                margin-bottom: 0;
+            }
+
+            .responsibilities li::before {
+                width: 6px;
+                height: 6px;
+                top: 6pt;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .contact-item a {
+                color: var(--color-teal-300);
+            }
+
+            /* Force scale down if content still doesn't fit */
+            .cv-container {
+                transform: scale(0.98);
+                transform-origin: top center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Download PDF Button Section - FIRST VISIBLE ELEMENT -->
+    <div class="download-section">
+        <button id="download-pdf-btn" class="download-button">
+            📄 Descargar como PDF
+        </button>
+    </div>
+
+    <div class="cv-container">
+        <!-- CV Content -->
+        <div class="cv-content">
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <header>
+                    <h1>KUBLAY TAYRO MOSQUEIRA</h1>
+                    <p class="title">Editor de Video &amp; Diseñador Gráfico</p>
+                </header>
+
+                <!-- Contact Section -->
+                <section class="section">
+                    <h2 class="section-title">Contacto</h2>
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </span>
+                        <a href="mailto:jktm01@gmail.com">jktm01@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </span>
+                        <span>933 495 414</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+                            </svg>
+                        </span>
+                        <a href="https://drive.google.com/drive/folders/1muu0iui32wHx2QmMttCZ_A68CMyNWa_y?usp=sharing" target="_blank">Ver Portafolio</a>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section class="section">
+                    <h2 class="section-title">Perfil Profesional</h2>
+                    <p class="description">
+                        Editor de video y diseñador gráfico. Experiencia en community management y creación de contenido audiovisual para marketing y redes sociales, con manejo avanzado de DaVinci Resolve, Premiere, After Effects, Photoshop, Figma e Illustrator. También tengo acceso a Sora 2 (OpenAI) y Veo 3.1 (Google) para la generación de videos IA.
+                    </p>
+                </section>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Education Section -->
+                <section class="main-section">
+                    <h2 class="main-section-title">Formación Académica</h2>
+                    
+                    <article class="education-item">
+                        <div class="item-header">
+                            <div class="item-title">
+                                <h3 class="institution-name">UNIVERSIDAD CONTINENTAL</h3>
+                                <p class="program-name">Ciencias de la Computación</p>
+                            </div>
+                            <span class="period">Julio 2025 – Actualidad</span>
+                        </div>
+                    </article>
+
+                    <article class="education-item">
+                        <div class="item-header">
+                            <div class="item-title">
+                                <h3 class="institution-name">GOOGLE - COURSERA</h3>
+                                <p class="program-name">Marketing Digital e E-commerce</p>
+                            </div>
+                            <span class="period">Enero 2025 – Febrero 2025</span>
+                        </div>
+                    </article>
+
+                    <article class="education-item">
+                        <div class="item-header">
+                            <div class="item-title">
+                                <h3 class="institution-name">ICPNA CUSCO</h3>
+                                <p class="program-name">Inglés Avanzado</p>
+                            </div>
+                            <span class="period">2013 – 2016</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="main-section">
+                    <h2 class="main-section-title">Experiencia Profesional</h2>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <div class="item-title">
+                                <h3 class="company-name">VIAJES PERÚ PARA TODOS</h3>
+                                <p class="job-title">Editor de videos</p>
+                            </div>
+                            <span class="period">Julio 2025 – Octubre 2025</span>
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Producción de contenido para TikTok, Instagram y Facebook.</li>
+                            <li>Animaciones narrativas para TikTok.</li>
+                            <li>Uso de IA (Sora 2 y Veo 3.1) para videos cortos.</li>
+                            <li>Identificación y reporte de tendencias y oportunidades de contenido.</li>
+                            <li>Análisis de métricas en excel para optimización de contenido.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <div class="item-title">
+                                <h3 class="company-name">CUSCO IN TOURS</h3>
+                                <p class="job-title">Community management</p>
+                            </div>
+                            <span class="period">Mayo 2025 – Julio 2025</span>
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Gestión y programación de publicaciones en plataformas digitales.</li>
+                            <li>Administración y monitoreo de comunidades online.</li>
+                            <li>Respuesta a consultas, comentarios y mensajes de usuarios.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <div class="item-title">
+                                <h3 class="company-name">SOLUCIONES GMySL S.A.C.</h3>
+                                <p class="job-title">Marketing digital</p>
+                            </div>
+                            <span class="period">Enero 2025 – Marzo 2025</span>
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Apoyo en la creación y programación de contenido para redes sociales de la empresa.</li>
+                            <li>Edición de piezas gráficas y videos cortos para campañas digitales.</li>
+                            <li>Community Management</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <div class="item-title">
+                                <h3 class="company-name">ECOGRAF</h3>
+                                <p class="job-title">Marketing digital</p>
+                            </div>
+                            <span class="period">Septiembre 2024 – Diciembre 2024</span>
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Edición de videos para redes sociales con enfoque en narrativa visual y dinamismo.</li>
+                            <li>Creación de piezas gráficas y material promocional.</li>
+                            <li>Community Management</li>
+                        </ul>
+                    </article>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script>
+        // PDF Download Button Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('download-pdf-btn');
+            if (btn) {
+                btn.addEventListener('click', function() {
+                    window.print();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
